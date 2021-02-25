@@ -1,4 +1,4 @@
-package com.company.array;
+package com.company.data_structure.array;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -19,7 +19,7 @@ public class Target {
             }
             prevMap.put(nums[i], i);
         }
-        return new int[0]; // Guranteed solution, no need for return
+        return new int[0];
     }
 
     public static int[] twoSum2(int[] nums, int target) {

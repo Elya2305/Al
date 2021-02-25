@@ -1,5 +1,9 @@
 package com.company.data_structure.array;
 
+/**
+ * Given an array nums of integers, return how many of
+ * them contain an even number of digits.
+ */
 public class FindNumbers {
     public static void main(String[] args) {
 

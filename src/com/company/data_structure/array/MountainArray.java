@@ -1,5 +1,9 @@
 package com.company.data_structure.array;
 
+/**
+ * Given an array of integers arr, return true if
+ * and only if it is a valid mountain array.
+ */
 public class MountainArray {
     public static void main(String[] args) {
         System.out.println(validMountainArray(new int[]{4, 3, 2, 1}));

@@ -1,5 +1,8 @@
 package com.company.data_structure.array;
 
+/**
+ * Given a binary array, find the maximum number of consecutive 1s in this array.
+ */
 public class FindMaxConsecutive {
     public static void main(String[] args) {
 

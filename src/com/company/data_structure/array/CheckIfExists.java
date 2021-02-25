@@ -3,9 +3,13 @@ package com.company.data_structure.array;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Given an array arr of integers, check if there exists two
+ * integers N and M such that N is the double of M ( i.e. N = 2 * M).
+ */
 public class CheckIfExists {
     public static void main(String[] args) {
-        System.out.println(checkIfExist2(new int[]{4,-7,11,4,18}));
+        System.out.println(checkIfExist2(new int[]{4, -7, 11, 4, 18}));
     }
 
     /**

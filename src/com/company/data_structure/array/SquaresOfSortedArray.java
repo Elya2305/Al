@@ -2,6 +2,10 @@ package com.company.data_structure.array;
 
 import java.util.Arrays;
 
+/**
+ * Given an integer array nums sorted in non-decreasing order,
+ * return an array of the squares of each number sorted in non-decreasing order.
+ */
 public class SquaresOfSortedArray {
     public static void main(String[] args) {
         System.out.println(Arrays.toString(sortedSquaresRight(new int[]{5, 6, 3})));

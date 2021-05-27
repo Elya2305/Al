@@ -1,6 +1,6 @@
 package com.company.data_structure.linked_list;
 
-public class DesignLinkedList {
+public class MainLinkedList {
     public static void main(String[] args) {
         CustomLinkedList<Integer> linkedList = new CustomLinkedList<>(10);
         linkedList.addAtTail(11);

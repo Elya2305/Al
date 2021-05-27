@@ -1,12 +1,12 @@
 package com.company.data_structure.linked_list;
 
 public class CustomLinkedList<T> {
-    private Node<T> head;
-    private int size;
+    protected Node<T> head;
+    protected int size;
 
     static class Node<T> {
-        private Node<T> next;
-        private final T value;
+        protected Node<T> next;
+        protected final T value;
 
         public Node(T value) {
             this.value = value;

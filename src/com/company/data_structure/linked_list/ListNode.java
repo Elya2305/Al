@@ -11,8 +11,15 @@ public class ListNode {
 
     @Override
     public String toString() {
-        return "ListNode{" +
-                "val=" + val +
-                '}';
+        StringBuilder sb = new StringBuilder("[");
+        sb.append(val).append(", ");
+        ListNode curr = next;
+        while (curr != null) {
+            sb.append(curr.val).append(", ");
+            curr = curr.next;
+        }
+        sb.delete(sb.length() - 2, sb.length());
+        sb.append("]");
+        return sb.toString();
     }
 }

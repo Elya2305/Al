@@ -6,14 +6,14 @@ package com.company.data_structure.linked_list;
  * <p>
  * https://stackoverflow.com/questions/23021377/reassign-this-in-java-class
  */
-class MyLinkedList {
-    private MyLinkedList next;
+class BadLinkedList {
+    private BadLinkedList next;
     private final int val;
 
     /**
      * Initialize your data structure here.
      */
-    public MyLinkedList(int val) {
+    public BadLinkedList(int val) {
         this.val = val;
     }
 
@@ -22,7 +22,7 @@ class MyLinkedList {
      */
     public int get(int index) {
         if (index < 0) return -1;
-        MyLinkedList curr = this;
+        BadLinkedList curr = this;
         int start = 0;
         while (start < index && curr != null) {
             curr = curr.next;
@@ -38,8 +38,8 @@ class MyLinkedList {
      * Add a node of value val before the first element of the linked list. After the insertion, the new node will be the first node of the linked list.
      */
     public void addAtHead(int val) { //?
-        MyLinkedList newVal = new MyLinkedList(val);
-        MyLinkedList curr = this;
+        BadLinkedList newVal = new BadLinkedList(val);
+        BadLinkedList curr = this;
 
     }
 
@@ -47,8 +47,8 @@ class MyLinkedList {
      * Append a node of value val to the last element of the linked list.
      */
     public void addAtTail(int val) {
-        MyLinkedList newVal = new MyLinkedList(val);
-        MyLinkedList nextVal = this;
+        BadLinkedList newVal = new BadLinkedList(val);
+        BadLinkedList nextVal = this;
         while (nextVal.next != null) {
             nextVal = nextVal.next;
         }
@@ -63,15 +63,15 @@ class MyLinkedList {
             addAtHead(val);
         }
         if (index < 0) return;
-        MyLinkedList newVal = new MyLinkedList(val);
-        MyLinkedList curr = this;
+        BadLinkedList newVal = new BadLinkedList(val);
+        BadLinkedList curr = this;
         int start = 1;
         while (start < index && curr != null) {
             curr = curr.next;
             start++;
         }
         if (start != index || curr == null) return;
-        MyLinkedList temp = curr.next;
+        BadLinkedList temp = curr.next;
         curr.next = newVal;
         newVal.next = temp;
     }
@@ -83,8 +83,8 @@ class MyLinkedList {
         if (index < 0) return;
         int start = 0;
 
-        MyLinkedList toDelete = this;
-        MyLinkedList prev = null;
+        BadLinkedList toDelete = this;
+        BadLinkedList prev = null;
         while (start < index && toDelete != null) {
             prev = toDelete;
             toDelete = toDelete.next;
@@ -101,7 +101,7 @@ class MyLinkedList {
     @Override
     public String toString() {
         StringBuilder res = new StringBuilder("[" + val);
-        MyLinkedList next = this.next;
+        BadLinkedList next = this.next;
         while (next != null) {
             res.append(", ").append(next.val);
             next = next.next;

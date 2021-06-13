@@ -8,7 +8,7 @@ import java.util.Arrays;
  */
 public class QuickSort {
     public static void main(String[] args) {
-        int[] arr = {8, 7, 6, 1, 0, 9, 2};
+        int[] arr = {182, 646, 545, 384, 89, 458, 633, 357, 569, 258};
         quickSort(arr, 0, arr.length - 1);
         System.out.println(Arrays.toString(arr));
     }
@@ -25,7 +25,7 @@ public class QuickSort {
         int pivotElement = arr[high];
         int pointer = low;
 
-        for (int i = low; i < high - 1; i++) {
+        for (int i = low; i < high; i++) {
             if (arr[i] < pivotElement) {
                 swap(arr, i, pointer);
                 pointer++;

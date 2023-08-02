@@ -3,29 +3,23 @@ package com.company.data_structure.binary_tree;
 import java.util.*;
 
 /*
-    1
+    3
    /\
-  2  3
- /\   \
-4  5   6
-       /
-      7
+  1  4
+  \
+   2
+
+
  */
 public class Traversal {
     public static void main(String[] args) {
-        TreeNode node1 = new TreeNode(1);
-        TreeNode node2 = new TreeNode(2);
-        TreeNode node3 = new TreeNode(3);
-        TreeNode node4 = new TreeNode(4);
-        TreeNode node5 = new TreeNode(5);
-        TreeNode node6 = new TreeNode(6);
-        TreeNode node7 = new TreeNode(7);
+        TreeNode node1 = new TreeNode(3);
+        TreeNode node2 = new TreeNode(1);
+        TreeNode node3 = new TreeNode(4);
+        TreeNode node4 = new TreeNode(2);
         node1.right = node3;
         node1.left = node2;
-        node2.left = node4;
-        node2.right = node5;
-        node3.right = node6;
-        node6.left = node7;
+        node2.right = node4;
 
         DFSTraversal traversal = new DFSTraversal();
         System.out.println(traversal.traverse(node1));
@@ -33,6 +27,9 @@ public class Traversal {
 
         BFSTraversal dfsTraversal = new BFSTraversal();
         System.out.println(dfsTraversal.traverse(node1));
+
+        InOrderTraversal inOrderTraversal = new InOrderTraversal();
+        inOrderTraversal.traverseIterative(node1);
     }
 
 }
@@ -94,6 +91,7 @@ class DFSTraversal {
 
         return lst;
     }
+
     /*
         1
        /\
@@ -150,5 +148,32 @@ class TreeNode {
         this.val = val;
         this.left = left;
         this.right = right;
+    }
+}
+
+
+class InOrderTraversal {
+    public void traverseIterative(TreeNode root) {
+        if (root == null) return;
+        Stack<TreeNode> stack = new Stack<>();
+
+        TreeNode curr = root;
+        while (curr != null || !stack.empty()) {
+            while (curr != null) {
+                stack.push(curr);
+                curr = curr.left;
+            }
+            TreeNode node = stack.pop();
+            System.out.println(node.val);
+            curr = node.right;
+        }
+    }
+
+    private void inorderTraversalRecursion(TreeNode root) {
+        if(root == null) return;
+
+        inorderTraversalRecursion(root.left);
+        System.out.println(root.val);
+        inorderTraversalRecursion(root.right);
     }
 }

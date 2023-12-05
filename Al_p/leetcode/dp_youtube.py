@@ -195,6 +195,8 @@ def uniquePathMaxProfitPath(grid) -> int:
 grid = [[0, 2, 2, 1],
         [3, 2, 1, 100],
         [4, 4, 2, 0]]
+
+
 # print(uniquePathMaxProfitPath(grid))
 
 # [[0, 2, 4, 5],
@@ -202,3 +204,23 @@ grid = [[0, 2, 2, 1],
 #  [7, 11, 13, 106]]
 
 # [(0, 0), (1, 0), (1, 1), (1, 2), (1, 3), (2, 3)]
+
+# constraint: 2 colors, can't paint more than 2 similar colors in a row
+def paintFans(n):
+    def paint(fans, color):
+        fans.append(color)
+        l = len(fans)
+        if l > n:
+            fans.pop()
+            return 0
+        if l > 1 and fans[l - 1] == fans[l - 2] == color:
+            fans.pop()
+            return 0
+        return 1 + paint(fans, 0) + paint(fans, 1)
+
+    return paint([], 0) + paint([], 1)
+
+
+print(paintFans(1))
+print(paintFans(2))
+print(paintFans(3))
